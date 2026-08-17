@@ -5,7 +5,7 @@
    Client ID below once for all Veyra users. Leave blank to keep Spotify
    gracefully unavailable without affecting any core Veyra feature. */
 window.VEYRA_CONFIG = Object.freeze({
-  spotifyClientId: '',
+  spotifyClientId: 'efd754799ae94ffd853e61ef9a8ab5dc',
   // Optional Cloudflare Worker URL from gateway/worker.js. Leave blank: Veyra still uses zero-key public lookups directly.
   gatewayUrl: ''
 });
