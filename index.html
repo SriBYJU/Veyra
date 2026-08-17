@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Veyra — a free, private, local-first fitness and nutrition coach for food logging, workouts, recipes, activity, recovery and progress." />
+  <link rel="canonical" href="https://sribyju.github.io/Veyra/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sribyju.github.io/Veyra/" />
+  <meta property="og:title" content="Veyra — Your Fitness, Understood." />
+  <meta property="og:description" content="Free • Private • Local. Nutrition, workouts, activity, recipes, progress, and an on-device coach." />
+  <meta property="og:image" content="https://sribyju.github.io/Veyra/assets/veyra-promo.png" />
+  <meta property="og:image:alt" content="Veyra fitness and nutrition app interface" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Veyra — Your Fitness, Understood." />
+  <meta name="twitter:description" content="Free • Private • Local-first nutrition, training, activity, recipes and progress." />
+  <meta name="twitter:image" content="https://sribyju.github.io/Veyra/assets/veyra-promo.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="stylesheet" href="master-audit.css" />
+  <title>Veyra — Your Fitness, Understood.</title>
+</head>
+<body>
+  <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <button class="brand" data-route="today" aria-label="Veyra home">
+        <img src="assets/icon-192.png" alt="" />
+        <span><strong>VEYRA</strong><small>FUEL · TRAIN · PROGRESS</small></span>
+      </button>
+      <nav id="desktopNav"></nav>
+      <div class="sidebar-foot">
+        <button class="mini-card streak-button" data-route="progress"><span>🔥</span><div><b id="streakSide">Start your streak</b><small>consistency streak</small></div></button>
+        <button class="mini-card" data-route="creator"><img src="assets/shriyan.jpg" alt="Creator" /><div><b>About the Creator</b><small>Why Veyra was built</small></div></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-brand" data-route="today" aria-label="Go to Today"><img src="assets/icon-192.png" alt=""/><b>VEYRA</b></button>
+        <div class="command-wrap">
+          <button id="commandBtn" class="command-btn"><span>⌕</span><span class="cmd-placeholder">Ask Veyra or log anything…</span><kbd>⌘ K</kbd></button>
+          <button id="voiceQuick" class="icon-btn" title="Talk to Veyra">🎙️</button>
+        </div>
+        <div class="top-actions">
+          <button id="installBtn" class="pill subtle" hidden>Install</button>
+          <button class="pill subtle goals-top" data-action="editGoals">Goals</button>
+          <button id="guideBtn" class="icon-btn guide-btn" aria-label="Open guide">?</button>
+          <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">◐</button>
+          <button class="avatar-btn" data-route="profile" title="Your profile"><span id="profileInitial">?</span></button>
+        </div>
+      </header>
+
+      <section id="view" class="view" tabindex="-1"></section>
+
+      <footer class="site-footer">
+        <span>Veyra • Free • Private • Local-first</span>
+        <span>Veyra and its creators provide informational tools, not medical advice; estimates can be wrong.</span>
+      </footer>
+    </main>
+  </div>
+
+  <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation"></nav>
+
+  <button id="fab" class="fab" aria-label="Quick add">+</button>
+
+  <div id="modal" class="modal-backdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><h2 id="modalTitle">Veyra</h2><button id="modalClose" class="icon-btn">×</button></div>
+      <div id="modalBody" class="modal-body"></div>
+    </section>
+  </div>
+
+
+  <section id="welcomeOverlay" class="welcome-overlay" hidden aria-labelledby="welcomeTitle">
+    <div class="welcome-card">
+      <div class="welcome-logo-wrap"><img src="assets/icon-512.png" alt="Veyra logo" class="welcome-logo"><div><span class="eyebrow">FREE • PRIVATE • LOCAL-FIRST</span><h1 id="welcomeTitle">Welcome to Veyra</h1><p>Your fitness, understood — starting with <strong>your</strong> data, not ours.</p></div></div>
+      <div class="welcome-grid">
+        <button id="welcomeNew" class="welcome-choice primary-choice"><span>✨</span><div><b>Set up my profile</b><small>Tell Veyra your name, goals, diet, activity and schedule. Review every target before saving.</small></div><strong>Start →</strong></button>
+        <button id="welcomeRestore" class="welcome-choice"><span>↥</span><div><b>I’ve used Veyra before</b><small>Import your Veyra Vault JSON to restore your profile, goals, meals, workouts and history on this device.</small></div><strong>Import →</strong></button>
+      </div>
+      <button id="welcomeSkip" class="ghost welcome-skip">Explore first — I’ll set this up later</button>
+      <div class="welcome-note">Nothing is uploaded to a Veyra account. Your profile stays on this device unless you export it.</div>
+    </div>
+  </section>
+
+  <input id="imageInput" type="file" accept="image/*" capture="environment" hidden />
+  <input id="backupInput" type="file" accept="application/json,.json" hidden />
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script src="enhancements.js"></script>
+  <script src="food-intelligence.js"></script>
+  <script src="vision-ai.js"></script>
+  <script src="release-polish.js"></script>
+  <script src="clarity.js"></script>
+  <script src="final-audit.js"></script>
+  <script src="dynamic-intelligence.js"></script>
+  <script src="master-audit-fixes.js"></script>
+</body>
+</html>
