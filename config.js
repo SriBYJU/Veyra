@@ -6,6 +6,6 @@
    gracefully unavailable without affecting any core Veyra feature. */
 window.VEYRA_CONFIG = Object.freeze({
   spotifyClientId: 'efd754799ae94ffd853e61ef9a8ab5dc',
-  // Optional Cloudflare Worker URL from gateway/worker.js. Leave blank: Veyra still uses zero-key public lookups directly.
-  gatewayUrl: ''
+  // Cloudflare Worker URL from gateway/worker.js. Public lookup only; no personal Veyra history is sent.
+  gatewayUrl: 'https://veyra-intelligence-gateway.avadhanula-shriyan.workers.dev'
 });
